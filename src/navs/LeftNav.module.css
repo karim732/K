@@ -1,0 +1,25 @@
+.left-nav {
+  padding: 15px;
+  width: var(--leftnav-width);
+  height: 100vh;
+  & ul {
+    list-style-type: none;
+    padding: 0;
+    padding-left: 20px;
+    margin: 0;
+
+    & li {
+      cursor: pointer;
+    }
+  }
+}
+
+ul.profile-list {
+  padding: 5px 20px;
+  & li {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    cursor: pointer;
+  }
+}

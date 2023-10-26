@@ -1,0 +1,10 @@
+.list-item {
+  padding-inline-end: 15px;
+  padding-block: 7px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  & span {
+    padding-left: 20px;
+  }
+}
