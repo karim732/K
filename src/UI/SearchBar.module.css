@@ -1,0 +1,22 @@
+.search-bar {
+  --search-bg-color: rgb(247, 249, 249);
+  width: 100%;
+  background-color: var(--search-bg-color);
+  color: rgba(83, 100, 113, 0.692);
+  border: 1.3px solid var(--search-bg-color);
+
+  & .search-icon {
+    padding-block: 10px;
+    padding-inline: 20px 0px;
+    text-align: center;
+    height: 1.4rem;
+  }
+  & .search-input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: inherit;
+    outline: none;
+    background-color: var(--search-bg-color);
+  }
+}
