@@ -1,0 +1,23 @@
+.event-item {
+  cursor: pointer;
+  & div {
+    & div:nth-child(odd) {
+      font-size: 0.8rem;
+      color: gray;
+    }
+    & div:nth-child(even) {
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+    & span {
+      color: #39b0ec;
+    }
+  }
+  &:hover {
+    background-color: rgb(229, 233, 235);
+  }
+  &:nth-last-child(1) {
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+  }
+}

@@ -1,4 +1,5 @@
-import profile from "../assets/profile.png";
+import profile from "../../assets/profile.png";
+
 import ListItem from "./ListItem";
 import {
   faHouse,

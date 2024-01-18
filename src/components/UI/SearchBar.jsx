@@ -5,11 +5,13 @@ import { useReducer } from "react";
 const initialStyles = {
   bgColor: "",
   borderColor: "",
+  iconColor: "",
 };
 const reducer = (state, action) => {
   const focusStyles = {
     bgColor: "white",
     borderColor: "#0a58ca",
+    iconColor: "#0a58ca",
   };
   return action.type === "focus" ? focusStyles : initialStyles;
 };
@@ -33,6 +35,7 @@ const SearchBar = () => {
         icon={faSearch}
         className={classes["search-icon"]}
         pull="left"
+        color={style.iconColor}
       />
       <input
         type="text"
