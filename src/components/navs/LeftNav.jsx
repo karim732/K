@@ -39,7 +39,7 @@ const LeftNav = () => {
       }
     >
       <ul>
-        <li>
+        <li style={{paddingInline:"15px"}}>
           <h2>
             <KSymbol />
           </h2>
