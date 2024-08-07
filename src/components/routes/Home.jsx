@@ -1,7 +1,11 @@
+import HomeHeader from "../headers/HomeHeader";
+import CreatePost from "../posts/CreatePost";
+
 const Home = () => {
   return (
     <>
-      <h4>Home</h4>
+      <HomeHeader />
+      <CreatePost />
     </>
   );
 };

@@ -1,0 +1,48 @@
+.header {
+    border-bottom: 1px solid rgb(194, 192, 192);
+    & >div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+
+        & a {
+            text-decoration: none;
+            color: black;
+            font-weight: 700;
+            font-size: 15px;
+            line-height: 20px;
+            height: inherit;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            box-sizing: border-box;
+
+
+            & >div {
+                display: grid;
+                align-items: end;
+
+                & span {
+                    line-height: inherit;
+                    vertical-align: middle;
+                    text-align: center;
+                    height: inherit;
+                    color: #212529;
+
+                }
+
+                & .highlighter {
+                    height: 4px;
+                    background-color: rgb(29, 155, 240);
+                    border-radius: 2px;
+                }
+            }
+
+
+
+            &:hover {
+                background-color: rgb(229, 233, 235);
+            }
+        }
+    }
+}
