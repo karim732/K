@@ -3,6 +3,7 @@ import profile from "../../assets/profile.png";
 import classes from "./CreatePost.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEarthAsia, faImage, faIcons, faList, faSmile, faClock, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import PrimaryButton from "../UI/PrimaryButton";
 const CreatePost = () => {
 
     return <div className="d-flex" style={{ padding: "10px", columnGap: "8px",borderBottom: "1px solid rgb(194, 192, 192)" }}>
@@ -24,9 +25,7 @@ const CreatePost = () => {
                        <button className="btn" title="Location" disabled><FontAwesomeIcon icon={faLocationDot}/> </button>
                        
                     </div>
-                    <button className="btn btn-primary rounded-pill" style={{ width: "max-content", fontWeight: "bolder" }}>
-                        Post
-                    </button>
+                    <PrimaryButton border="pill" title="Post"/>
                 </div>
             </div>
         </div>

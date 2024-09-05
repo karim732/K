@@ -1,4 +1,5 @@
 import profile from "../../assets/profile.png";
+import PrimaryButton from "../UI/PrimaryButton";
 
 import ListItem from "./ListItem";
 import {
@@ -48,9 +49,7 @@ const LeftNav = () => {
           <ListItem key={item.id} item={item} />
         ))}
         <li>
-          <button type="button" className="btn btn-primary w-100 rounded-pill">
-            Post
-          </button>
+        <PrimaryButton border="pill" title="Post" width="100%"/>
         </li>
       </ul>
       <ul className={classes["profile-list"]}>
