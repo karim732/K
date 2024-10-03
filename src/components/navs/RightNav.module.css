@@ -1,6 +1,6 @@
 .right-nav {
   width: var(--rightnav-width);
-  height: 100vh;
+  max-height: 100vh;
   padding: 10px;
   overflow-y: scroll;
   -ms-overflow-style: none; /* IE and Edge */

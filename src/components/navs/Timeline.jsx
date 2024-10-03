@@ -40,6 +40,36 @@ const Timeline = () => {
       body: "#Jadeja",
       details: "49.7k posts",
     },
+    {
+      title: "Sports • Trending",
+      body: "#Sachin",
+      details: "28.6k posts",
+    },
+    {
+      title: "Sports • Trending",
+      body: "#Jadeja",
+      details: "49.7k posts",
+    },
+    {
+      title: "Sports • Trending",
+      body: "#Sachin",
+      details: "28.6k posts",
+    },
+    {
+      title: "Sports • Trending",
+      body: "#Jadeja",
+      details: "49.7k posts",
+    },
+    {
+      title: "Sports • Trending",
+      body: "#Sachin",
+      details: "28.6k posts",
+    },
+    {
+      title: "Sports • Trending",
+      body: "#Jadeja",
+      details: "49.7k posts",
+    },
   ];
   return (
     <Card>

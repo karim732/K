@@ -6,7 +6,12 @@ const HomeFeed = () => {
     return<>
     <a href="#" className={classes["show__posts"]}> <span>Show x posts</span> </a>
     <Post />
-    {/* <Post/> */}
+    <Post/>
+    <Post/>
+    <Post/>
+    <Post/>
+    <Post/>
+
     </>
 }
 
