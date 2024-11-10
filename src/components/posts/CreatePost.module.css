@@ -1,0 +1,45 @@
+.who--can--replay {
+    color: #1d9bf0;
+    padding-inline: 15px;
+    border-radius: 50px;
+    line-height: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    outline: none !important;
+    border: none !important;
+
+    &:hover {
+        background-color: #aecbe0;
+        color: #1d9bf0;
+    }
+
+    &:active {
+        color: #1d9bf0 !important;
+    }
+}
+
+.attachment {
+    display: flex;
+    column-gap: 6px;
+    & button {
+        outline: none !important;
+        border: none !important;
+        color: #1d9bf0;
+        border-radius: 100%;
+        padding-inline: 8px;
+        padding-block: 3px;
+
+        &:hover {
+            background-color: #aecbe0;
+            color: #1d9bf0;
+
+        }
+
+        &:active {
+            color: #1d9bf0 !important;
+        }
+        &:disabled {
+            color: #1d9bf0 !important;
+        }
+    }
+}

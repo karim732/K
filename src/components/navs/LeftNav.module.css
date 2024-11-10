@@ -2,14 +2,17 @@
   padding: 15px;
   width: var(--leftnav-width);
   height: 100vh;
+  overflow-y: auto;
   & ul {
     list-style-type: none;
     padding: 0;
     padding-left: 20px;
     margin: 0;
-
+    display: flex;
+    flex-direction: column;
     & li {
       cursor: pointer;
+      padding-inline: 15px;
     }
   }
 }
@@ -22,4 +25,20 @@ ul.profile-list {
     column-gap: 15px;
     cursor: pointer;
   }
+}
+
+@media only screen and ( min-width: 480px ) and ( max-width: 768px ) {
+  .left-nav {
+    width: 70px;
+
+    & ul{
+      padding-left: 0;
+      align-items: center;
+      & li {
+        padding-inline: 0;
+      }
+
+    }
+  }
+  
 }

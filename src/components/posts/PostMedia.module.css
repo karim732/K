@@ -1,0 +1,19 @@
+.media--container{
+    margin-top: 10px;
+    display: grid;
+    flex-wrap: wrap;
+    border: 1px solid rgb(207, 217, 222);
+    border-radius: 5px;
+    overflow: hidden;
+    gap: 2px;
+  
+    & .image { 
+        padding-top: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    
+
+    
+}

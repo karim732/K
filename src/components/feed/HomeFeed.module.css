@@ -1,0 +1,11 @@
+.show__posts {
+    display: flex;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-bottom: 1px solid rgb(194, 192, 192);
+    & span{
+        font-size: 15px;
+    }
+}

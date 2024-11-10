@@ -7,7 +7,7 @@ const ListItem = (props) => {
         icon={props.item.icon}
         style={{ width: "25px", height: "20px" }}
       />
-      <span>{props.item.title}</span>
+      { props.isMediumScreen || <span>{props.item.title}</span> }    
     </li>
   );
 };
