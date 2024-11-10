@@ -1,0 +1,13 @@
+.home--nav{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    padding: 10px 20px;
+
+    & a{
+        text-decoration: none;
+        color: rgb(29, 155, 240);
+        justify-self: end;
+        
+    }
+} 

@@ -1,0 +1,33 @@
+.bottom--nav{
+    position: fixed;
+    bottom: -5px;
+    width: 100%;
+}
+.post {
+    width: max-content;
+    padding: 15px;
+    background-color: rgb(29, 155, 240);
+    border-radius: 50%;
+    color: white;
+    position: absolute;
+    right: 12px;
+    bottom: 70px;
+    & svg {
+        font-size: 20px;
+    }
+}
+
+.bottom--nav--icons {
+    
+    height: 50px;
+    background-color: white;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 25px;
+
+    & svg {
+        font-size: 20px;
+    }
+}
