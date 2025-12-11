@@ -10,8 +10,8 @@ const initialStyles = {
 const reducer = (state, action) => {
   const focusStyles = {
     bgColor: "white",
-    borderColor: "#0a58ca",
-    iconColor: "#0a58ca",
+    borderColor: "#1d9bf0",
+    iconColor: "#1d9bf0",
   };
   return action.type === "focus" ? focusStyles : initialStyles;
 };

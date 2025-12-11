@@ -1,6 +1,6 @@
 import EventItem from "./EventItem";
 import Card from "../UI/Card";
-import basketball from "./../../assets/basketball.jpg";
+import basketball from "../../assets/basketball.jpg";
 
 const imageStyles = { width: "60px", aspectRatio: "1/1" };
 const Timeline = () => {

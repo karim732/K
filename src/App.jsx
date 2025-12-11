@@ -4,9 +4,14 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import Login from "./components/routes/Login";
 import Home from "./components/routes/Home";
 import RootLayout from "./components/pages/RootLayout";
+import { Navigate, Outlet } from "react-router-dom";
+const ProtectedRoute = () => {
+  const isLoggedIn = !!localStorage.getItem("user");
+  return isLoggedIn ? <Outlet /> : <Navigate to="/login" replace />;
+};
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/login",
     element: <Login />,
   },
   {
@@ -14,8 +19,13 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       {
-        path: "home",
-        element: <Home />,
+        element: <ProtectedRoute />,
+        children: [
+          {
+            path: "",
+            element: <Home />,
+          },
+        ],
       },
     ],
   },

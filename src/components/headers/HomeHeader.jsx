@@ -1,4 +1,4 @@
-import classes from "./Homeheader.module.css";
+import classes from "./HomeHeader.module.css";
 
 const HomeHeader = () => {
 
