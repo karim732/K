@@ -3,24 +3,52 @@ import { useNavigate } from "react-router-dom";
 import KSymbol from "../UI/KSymbol";
 import Modal from "../UI/Modal";
 import classes from "./Login.module.css";
-import { loginAPI } from "../../api/apis";
+import { loginAPI, registerAPI } from "../../api/apis";
 const Login = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const [loginError, setLoginError] = useState(false);
+  const [signMessage, setSignMessage] = useState(null);
   const navigate = useNavigate();
-  const handleLogin = async () => {
-    const { response, error } = await loginAPI({
-      body: {
-        username: userName,
-        password: password,
-      },
-    });
-    if (response?.success) {
-      localStorage.setItem("user", userName);
-      navigate("/");
+  const signHandler = async (api) => {
+    try {
+      const { response, error } = await api({
+        body: {
+          username: userName,
+          password: password,
+        },
+      });
+      if (error) {
+        throw error;
+      }
+      return response;
+    } catch (err) {
+      return {
+        success: false,
+        message:
+          err?.response?.data?.message ||
+          err?.message ||
+          "Something went wrong",
+      };
+    } finally {
+      setUserName("");
+      setPassword("");
+    }
+  };
+  const showMessage = (type, message) => {
+    setSignMessage({ type, message });
+    setTimeout(() => setSignMessage(null), 3000);
+  };
+  const handleSign = async (type) => {
+    const api = type === "login" ? loginAPI : registerAPI;
+    const response = await signHandler(api);
+    if (response.success) {
+      if (type === "login") {
+        localStorage.setItem("user", userName);
+        navigate("/");
+      }
+      showMessage("success", response?.message);
     } else {
-      setLoginError(true);
+      showMessage("error", response?.message || "Something went wrong");
     }
   };
 
@@ -49,24 +77,35 @@ const Login = () => {
             Password
           </span>
           <input
-            type="text"
+            type="password"
             className="form-control"
             htmlFor="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <div>
+        <div className="d-flex gap-2">
           <button
             type="submit"
-            className="btn btn-dark w-100 rounded-pill"
-            onClick={handleLogin}
+            className="btn btn-dark flex-grow-1 rounded-pill"
+            onClick={() => handleSign("login")}
           >
             Login
           </button>
+          <button
+            type="submit"
+            className="btn btn-outline-dark rounded-pill"
+            onClick={() => handleSign("register")}
+          >
+            Register
+          </button>
         </div>
-        {loginError && (
-          <h6 className="text-danger mt-3 text-center">Failed to login</h6>
+        {signMessage && (
+          <h6
+            className={`text-${signMessage?.type === "error" ? "danger" : "success"} mt-3 text-center`}
+          >
+            {signMessage?.message}
+          </h6>
         )}
       </div>
     </Modal>
