@@ -29,6 +29,7 @@ import classes from "./LeftNav.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon } from "@fortawesome/fontawesome-svg-core";
 import { useNavigate } from "react-router-dom";
+import { logoutAPI } from "../../api/apis";
 
 const ListItems = [
   {
@@ -129,9 +130,19 @@ const LeftNav = () => {
   useEffect(() => {
     setIsMediumScreen(["medium"].includes(screen));
   }, [screen]);
-  const handleLogout = () => {
-    localStorage.removeItem("user");
-    navigate("/login");
+  const handleLogout = async () => {
+    try {
+      const { response, error } = await logoutAPI({ body: {} });
+      if (response?.success) {
+        localStorage.removeItem("user");
+        navigate("/login");
+      }
+      if (error) {
+        throw error;
+      }
+    } catch (e) {
+      console.log(e);
+    }
   };
   if (["small"].includes(screen)) {
     if (isSmMdSideNavActive) {
